@@ -1,7 +1,12 @@
+/* Yeni Renk Paleti:
+   Arka Plan: #353535 (Koyu Gri)
+   Kartlar: Daha açık bir gri tonu (örneğin #454545) veya #353535'in kendisi.
+   Vurgu Rengi (Mavi): #0057FF
+*/
+
 body {
-    /* Resimdeki koyu yeşil/haki arka plan rengi */
-    background-color: #2e3e2e;
-    color: #ffffff; /* Varsayılan metin rengi beyaz */
+    background-color: #353535; /* Koyu Gri Arka Plan */
+    color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 20px 0;
@@ -13,7 +18,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 600px; /* İçerik genişliğini belirle */
+    max-width: 600px;
     padding: 0 15px;
     box-sizing: border-box;
 }
@@ -22,11 +27,11 @@ body {
 .profile-card,
 .links-section,
 .verified-accounts-section {
-    background-color: #3b503b; /* Kartların biraz daha açık yeşil/haki rengi */
+    background-color: #454545; /* Kartlar için biraz daha açık gri */
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -65,15 +70,13 @@ p {
 .profile-image-placeholder {
     width: 90px;
     height: 90px;
-    background-color: #4b624b; /* Resim arka planı */
+    background-color: #555555; /* Resim arka planı */
     border-radius: 50%;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
     position: relative;
-    /* Resim yer tutucunun ortalanmış olması için */
     margin: 0 auto;
-    background-image: url('URL_OF_ARDA_CETIN_IMAGE'); /* Gerçek resmi buraya ekleyebilirsiniz */
     background-size: cover;
     background-position: center;
 }
@@ -112,7 +115,7 @@ p {
 }
 
 .verified-icon {
-    color: #4CAF50; /* Yeşil checkmark */
+    color: #0057FF; /* Mavi checkmark */
 }
 
 .social-icons i {
@@ -131,24 +134,29 @@ p {
     display: flex;
     justify-content: center;
     gap: 10px;
+    /* Tek bir buton olduğu için merkezde kalmasını sağlar */
 }
 
 .action-button {
-    flex-grow: 1;
-    max-width: 50%;
+    /* Buton, orijinal "Contact" butonu gibi tam genişlik kullanır */
+    width: 100%;
+    max-width: 300px; /* Tek buton için maksimum genişlik */
     padding: 10px 20px;
-    border: 1px solid #c0c0c0;
+    border: 1px solid #0057FF; /* Mavi sınır */
     border-radius: 6px;
     background-color: transparent;
-    color: #ffffff;
+    color: #0057FF; /* Mavi metin */
     font-size: 1em;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none; /* a etiketi için alt çizgiyi kaldırır */
+    display: inline-block; /* a etiketinin buton gibi davranması için */
 }
 
 .action-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #0057FF; /* Hover'da mavi dolgu */
+    color: #ffffff; /* Hover'da beyaz metin */
 }
 
 /* --- Bağlantılar ve Doğrulanmış Hesaplar Stilleri --- */
@@ -177,7 +185,7 @@ p {
 .link-icon, .verified-logo {
     color: #c0c0c0;
     font-size: 1.1em;
-    width: 20px; /* İkonlar için sabit bir genişlik */
+    width: 20px;
     text-align: center;
 }
 
@@ -191,7 +199,7 @@ p {
 }
 
 .verified-check {
-    color: #4CAF50; /* Yeşil checkmark */
+    color: #0057FF; /* Mavi checkmark */
     font-size: 1em;
 }
 
@@ -203,9 +211,9 @@ p {
 }
 
 .advanced-details button {
-    background-color: #3b503b;
-    color: #ffffff;
-    border: 1px solid #ffffff;
+    background-color: #454545; /* Kart rengi */
+    color: #0057FF; /* Mavi metin */
+    border: 1px solid #0057FF; /* Mavi sınır */
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 0.9em;
@@ -213,6 +221,12 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.advanced-details button:hover {
+    background-color: #0057FF;
+    color: #ffffff;
 }
 
 .advanced-details button i {
@@ -229,7 +243,7 @@ p {
     font-size: 0.8em;
     color: #c0c0c0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: #2e3e2e;
+    background-color: #353535; /* Arka plan rengi */
 }
 
 .footer a {
@@ -239,5 +253,5 @@ p {
 }
 
 .footer a:hover {
-    color: #ffffff;
+    color: #0057FF; /* Hover'da mavi vurgu */
 }
