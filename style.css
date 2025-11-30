@@ -1,0 +1,243 @@
+body {
+    /* Resimdeki koyu yeşil/haki arka plan rengi */
+    background-color: #2e3e2e;
+    color: #ffffff; /* Varsayılan metin rengi beyaz */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* İçerik genişliğini belirle */
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* --- Genel Kart Stili --- */
+.profile-card,
+.links-section,
+.verified-accounts-section {
+    background-color: #3b503b; /* Kartların biraz daha açık yeşil/haki rengi */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #ffffff;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* --- Profil Kartı Stilleri --- */
+.profile-card {
+    text-align: center;
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.profile-image-placeholder {
+    width: 90px;
+    height: 90px;
+    background-color: #4b624b; /* Resim arka planı */
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+    /* Resim yer tutucunun ortalanmış olması için */
+    margin: 0 auto;
+    background-image: url('URL_OF_ARDA_CETIN_IMAGE'); /* Gerçek resmi buraya ekleyebilirsiniz */
+    background-size: cover;
+    background-position: center;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tagline {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 5px;
+    color: #c0c0c0;
+}
+
+.location {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.verified-icon {
+    color: #4CAF50; /* Yeşil checkmark */
+}
+
+.social-icons i {
+    color: #ffffff;
+}
+
+.bio-text {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: #c0c0c0;
+}
+
+/* --- Aksiyon Butonları --- */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-button {
+    flex-grow: 1;
+    max-width: 50%;
+    padding: 10px 20px;
+    border: 1px solid #c0c0c0;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Bağlantılar ve Doğrulanmış Hesaplar Stilleri --- */
+.link-item,
+.account-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link-item:first-of-type,
+.account-item:first-of-type {
+    border-top: none;
+}
+
+.link-item a,
+.account-item a {
+    color: #ffffff;
+    text-decoration: none;
+    flex-grow: 1;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.link-icon, .verified-logo {
+    color: #c0c0c0;
+    font-size: 1.1em;
+    width: 20px; /* İkonlar için sabit bir genişlik */
+    text-align: center;
+}
+
+.verified-logo {
+    font-size: 1.2em;
+}
+
+.external-icon {
+    font-size: 0.8em;
+    color: #c0c0c0;
+}
+
+.verified-check {
+    color: #4CAF50; /* Yeşil checkmark */
+    font-size: 1em;
+}
+
+/* --- Gelişmiş Detaylar Butonu --- */
+.advanced-details {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.advanced-details button {
+    background-color: #3b503b;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.advanced-details button i {
+    font-size: 0.8em;
+}
+
+/* --- Altbilgi (Footer) --- */
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 0.8em;
+    color: #c0c0c0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #2e3e2e;
+}
+
+.footer a {
+    color: #c0c0c0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer a:hover {
+    color: #ffffff;
+}
