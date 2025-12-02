@@ -1,70 +1,267 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arda Çetin - Bio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Arda Çetin - Portfolio</title>
+    <!-- Poppins Fontunu Yükleme -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Genel ayarlar ve renk tanımları */
+        :root {
+            --primary-color: #0057FF; /* Mavi */
+            --background-color: #f2f2f2; /* Açık Gri Arka Plan */
+            --text-color: #353535; /* Koyu Gri Yazı */
+            --secondary-text-color: #a0a0a0; /* Açık gri etiketler için */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* İçeriği yukarıdan başlat */
+            min-height: 100vh;
+            padding: 4rem 1rem; /* Sayfanın üstünden boşluk bırak */
+        }
+
+        .container {
+            max-width: 650px; /* İçerik genişliğini sınırlama */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Avatar resmi için özel stil */
+        .avatar-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            /* Resim yerine placeholder kullanıyoruz */
+            background-color: #cccccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #777777;
+        }
+        
+        /* Simüle edilmiş Christian Baun avatarı için görsel stil */
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Tasarımdaki düzeni taklit etmek için ana içerik wrapper */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: minmax(50px, 120px) 1fr; /* Sol etiket ve sağ içerik */
+            gap: 0 40px;
+            text-align: left;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        /* Başlıklar ve bilgiler */
+        .profile-header {
+            text-align: center;
+            width: 100%;
+        }
+
+        .name {
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: 600; /* semi-bold */
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+        }
+
+        .title {
+            font-size: 1rem; /* text-base */
+            font-weight: 400;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            /* İki satırlı unvan için satır aralığını ayarlama (gerekirse) */
+            line-height: 1.3; 
+        }
+
+        /* Sol menü/etiket stili */
+        .section-label {
+            grid-column: 1;
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500;
+            color: var(--secondary-text-color);
+            text-align: right;
+            padding-top: 0.5rem;
+            user-select: none;
+            line-height: 1.75; /* mt-2'ye eşdeğer boşluk sağlamak için */
+        }
+
+        /* Sağ içerik stili */
+        .section-content {
+            grid-column: 2;
+            margin-bottom: 2.5rem; /* Bölümler arası boşluk */
+            line-height: 1.75;
+            font-weight: 300;
+        }
+
+        /* Link stili - Tasarımdaki mavi rengi kullanıyoruz */
+        .section-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .section-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* İletişim bölümündeki tire */
+        .contact-signature {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        /* Buton grubu */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap; /* Butonların alt satıra geçmesini sağlar */
+            gap: 0.75rem;
+            justify-content: center;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        /* Buton stili */
+        .action-button {
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px; /* Full rounded */
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .action-button:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer stili */
+        .footer {
+            margin-top: 5rem;
+            font-size: 0.75rem; /* text-xs */
+            color: var(--secondary-text-color);
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid #e0e0e0;
+            width: 100%;
+            max-width: 650px;
+        }
+
+        /* Mobil uyumluluk */
+        @media (max-width: 600px) {
+            .content-wrapper {
+                grid-template-columns: 1fr; /* Tek sütuna düşür */
+                gap: 0;
+            }
+
+            .section-label {
+                text-align: left;
+                margin-top: 1.5rem;
+                padding-bottom: 0;
+            }
+
+            .section-content {
+                margin-bottom: 1rem;
+            }
+
+            .button-group {
+                flex-direction: row; /* Butonlar satırda kalır ama flex-wrap sayesinde alt satıra geçer */
+                align-items: center;
+            }
+
+            .action-button {
+                justify-content: center;
+                flex-grow: 1; /* Mobil görünümde eşit büyüme sağlar */
+                min-width: 45%; /* Yan yana iki buton sığdırmak için */
+            }
+        }
+    </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="profile-card">
-            <div class="header">
-                <div class="profile-image-container">
-                    <div class="profile-image-placeholder">
-                        <i class="fas fa-ellipsis-h menu-icon"></i>
-                    </div>
-                </div>
-                <h1>Arda Çetin</h1>
-                <p class="tagline">I make stuff on the internet.</p>
-                <p class="location">Istanbul, Türkiye</p>
+        <!-- Profil Başlık Alanı -->
+        <div class="profile-header">
+            <!-- Avatar - Placeholder -->
+            <div class="avatar-container">
+                <img src="https://placehold.co/120x120/cccccc/353535?text=AÇ" 
+                     alt="Profile Avatar" 
+                     class="w-full h-full object-cover rounded-full"
+                     onerror="this.onerror=null; this.src='https://placehold.co/120x120/cccccc/353535?text=User'">
+            </div>
 
+            <h1 class="name">Arda Çetin</h1>
+            <!-- GÜNCELLENMİŞ UNVAN -->
+            <p class="title">Solopreneur<br>I make stuff on the internet.</p>
+        </div>
+
+        <!-- İçerik Alanı -->
+        <div class="content-wrapper">
             
-                </div>
+            <!-- ABOUT Section -->
+            <span class="section-label">/about</span>
+            <div class="section-content">
+                <p>I am a digital entrepreneur who crafts innovative projects, blending design, development, and strategy to deliver transformation-focused solutions. I prioritize human-centered technology, building simple yet powerful systems that create meaningful social impact.</p>
             </div>
 
-            <p class="bio-text">I make stuff on the internet.</p>
-
-            <div class="actions">
-                <a href="mailto:acetin@gmail.com" class="action-button contact-button">Contact</a>
+            <!-- PROJECTS Section (Keep it as lorem ipsum) -->
+            <span class="section-label">/projects</span>
+            <div class="section-content">
+                <p>I've built a few tools that help marketers move faster. One of them is <a href="#" target="_blank" rel="noopener noreferrer">Howdy</a>, a project I spun up to map out HubSpot workflows and make automation easier to navigate. I also created <a href="#" target="_blank" rel="noopener noreferrer">Hubphantom</a>, a Chrome extension featured by Google and used by 900+ teams.</p>
             </div>
+
+            <!-- CONTACT Section -->
+            <span class="section-label">/contact</span>
+            <div class="section-content">
+                <p>For inquiries or collaboration, feel free to reach out. I’m always open to exploring new ideas and meaningful partnerships.</p>
+
+                <p class="contact-signature">–– Arda</p>
+            </div>
+            
         </div>
 
-        <div class="links-section">
-            <h2>Links</h2>
-            <div class="link-item">
-                <i class="fas fa-code link-icon"></i>
-                <a href="https://lets.digital" target="_blank">lets.digital</a>
-                <i class="fas fa-arrow-up-right-from-square external-icon"></i>
-            </div>
+        <!-- Aksiyon Butonları -->
+        <!-- Yeni butonlar eklendi: Mail, Instagram, Linkedin, X, Github -->
+        <div class="button-group">
+            <a href="mailto:example@example.com" class="action-button">Email</a>
+            <a href="#" class="action-button" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" class="action-button" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="#" class="action-button" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="#" class="action-button" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-
-        <div class="verified-accounts-section">
-            <h2>Verified Accounts</h2>
-            <div class="account-item">
-                <i class="fab fa-x verified-logo"></i>
-                <a href="https://x.com/ardacetin" target="_blank">x.com/ardacetin</a>
-                <i class="fas fa-check-circle verified-check"></i>
-            </div>
-            <div class="account-item">
-                <i class="fab fa-linkedin-in verified-logo"></i>
-                <a href="https://linkedin.com/in/ardacetin" target="_blank">linkedin.com/in/ardacetin</a>
-                <i class="fas fa-check-circle verified-check"></i>
-            </div>
-            <div class="account-item">
-                <i class="fab fa-github verified-logo"></i>
-                <a href="https://github.com/ardacetin" target="_blank">github.com/ardacetin</a>
-                <i class="fas fa-check-circle verified-check"></i>
-            </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            &#127278; 1985
         </div>
-
-
-
     </div>
-    <footer class="footer">
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy Policy</a>
-    </footer>
+
 </body>
 </html>
