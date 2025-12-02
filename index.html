@@ -29,7 +29,7 @@
         }
 
         .container {
-            max-width: 650px; /* İçerik genişliğini sınırlama */
+            max-width: 1000px; /* İÇERİK GENİŞLİĞİ 1000px olarak güncellendi */
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -63,6 +63,7 @@
 
         /* Tasarımdaki düzeni taklit etmek için ana içerik wrapper */
         .content-wrapper {
+            /* Projeler bölümü kalktığı için contact ve about'ı tutacak şekilde grid yapısını koruduk */
             display: grid;
             grid-template-columns: minmax(50px, 120px) 1fr; /* Sol etiket ve sağ içerik */
             gap: 0 40px;
@@ -171,7 +172,7 @@
             padding: 1rem 0;
             border-top: 1px solid #e0e0e0;
             width: 100%;
-            max-width: 650px;
+            max-width: 1000px; /* FOOTER GENİŞLİĞİ 1000px olarak güncellendi */
         }
 
         /* Mobil uyumluluk */
@@ -209,16 +210,16 @@
     <div class="container">
         <!-- Profil Başlık Alanı -->
         <div class="profile-header">
-            <!-- Avatar - Placeholder -->
+            <!-- Avatar - GÜNCELLENMİŞ URL -->
             <div class="avatar-container">
-                <img src="https://placehold.co/120x120/cccccc/353535?text=AÇ" 
+                <img src="https://pbs.twimg.com/profile_images/1978073305539055616/Wl3vo4p4_400x400.jpg" 
                      alt="Profile Avatar" 
                      class="w-full h-full object-cover rounded-full"
-                     onerror="this.onerror=null; this.src='https://placehold.co/120x120/cccccc/353535?text=User'">
+                     onerror="this.onerror=null; this.src='https://placehold.co/120x120/cccccc/353535?text=AÇ'">
             </div>
 
             <h1 class="name">Arda Çetin</h1>
-
+            <!-- GÜNCELLENMİŞ UNVAN -->
             <p class="title">Solopreneur<br>I make stuff on the internet.</p>
         </div>
 
@@ -229,12 +230,6 @@
             <span class="section-label">/about</span>
             <div class="section-content">
                 <p>I am a digital entrepreneur who crafts innovative projects, blending design, development, and strategy to deliver transformation-focused solutions. I prioritize human-centered technology, building simple yet powerful systems that create meaningful social impact.</p>
-            </div>
-
-            <!-- PROJECTS Section (Keep it as lorem ipsum) -->
-            <span class="section-label">/projects</span>
-            <div class="section-content">
-                <p>I've built a few tools that help marketers move faster. One of them is <a href="#" target="_blank" rel="noopener noreferrer">Howdy</a>, a project I spun up to map out HubSpot workflows and make automation easier to navigate. I also created <a href="#" target="_blank" rel="noopener noreferrer">Hubphantom</a>, a Chrome extension featured by Google and used by 900+ teams.</p>
             </div>
 
             <!-- CONTACT Section -->
@@ -248,7 +243,7 @@
         </div>
 
         <!-- Aksiyon Butonları -->
-        <!-- Yeni butonlar eklendi: Mail, Instagram, Linkedin, X, Github -->
+        <!-- GÜNCELLENMİŞ BAĞLANTILAR -->
         <div class="button-group">
             <a href="mailto:arda@letsdigital.co" class="action-button">Email</a>
             <a href="https://www.instagram.com/ardacetin___/" class="action-button" target="_blank" rel="noopener noreferrer">Instagram</a>
