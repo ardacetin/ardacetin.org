@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arda Çetin - Portfolio</title>
-    <!-- Poppins Fontunu Yükleme -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Genel ayarlar ve renk tanımları */
         :root {
-            --primary-color: #0057FF; /* Mavi */
-            --background-color: #f2f2f2; /* Açık Gri Arka Plan */
-            --text-color: #353535; /* Koyu Gri Yazı */
-            --secondary-text-color: #a0a0a0; /* Açık gri etiketler için */
+            --primary-color: #0057FF;
+            --background-color: #f2f2f2;
+            --text-color: #353535;
+            --secondary-text-color: #a0a0a0;
         }
 
         body {
@@ -23,13 +20,13 @@
             color: var(--text-color);
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* İçeriği yukarıdan başlat */
+            align-items: flex-start;
             min-height: 100vh;
-            padding: 4rem 1rem; /* Sayfanın üstünden boşluk bırak */
+            padding: 4rem 1rem;
         }
 
         .container {
-            max-width: 1000px; /* İÇERİK GENİŞLİĞİ 1000px olarak güncellendi */
+            max-width: 650px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -37,13 +34,11 @@
             text-align: center;
         }
 
-        /* Avatar resmi için özel stil */
         .avatar-img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             margin-bottom: 1.5rem;
-            /* Resim yerine placeholder kullanıyoruz */
             background-color: #cccccc;
             display: flex;
             justify-content: center;
@@ -52,7 +47,6 @@
             color: #777777;
         }
         
-        /* Simüle edilmiş Christian Baun avatarı için görsel stil */
         .avatar-container {
             width: 120px;
             height: 120px;
@@ -61,61 +55,54 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Tasarımdaki düzeni taklit etmek için ana içerik wrapper */
         .content-wrapper {
-            /* Projeler bölümü kalktığı için contact ve about'ı tutacak şekilde grid yapısını koruduk */
             display: grid;
-            grid-template-columns: minmax(50px, 120px) 1fr; /* Sol etiket ve sağ içerik */
+            grid-template-columns: minmax(50px, 120px) 1fr;
             gap: 0 40px;
             text-align: left;
             width: 100%;
             margin-top: 2rem;
         }
 
-        /* Başlıklar ve bilgiler */
         .profile-header {
             text-align: center;
             width: 100%;
         }
 
         .name {
-            font-size: 1.75rem; /* text-3xl */
-            font-weight: 600; /* semi-bold */
+            font-size: 1.75rem;
+            font-weight: 600;
             line-height: 1.2;
             margin-bottom: 0.25rem;
         }
 
         .title {
-            font-size: 1rem; /* text-base */
+            font-size: 1rem;
             font-weight: 400;
             color: var(--text-color);
             opacity: 0.8;
             margin-bottom: 2rem;
-            /* İki satırlı unvan için satır aralığını ayarlama (gerekirse) */
             line-height: 1.3; 
         }
 
-        /* Sol menü/etiket stili */
         .section-label {
             grid-column: 1;
-            font-size: 0.875rem; /* text-sm */
+            font-size: 0.875rem;
             font-weight: 500;
             color: var(--secondary-text-color);
             text-align: right;
             padding-top: 0.5rem;
             user-select: none;
-            line-height: 1.75; /* mt-2'ye eşdeğer boşluk sağlamak için */
+            line-height: 1.75;
         }
 
-        /* Sağ içerik stili */
         .section-content {
             grid-column: 2;
-            margin-bottom: 2.5rem; /* Bölümler arası boşluk */
+            margin-bottom: 2.5rem;
             line-height: 1.75;
             font-weight: 300;
         }
 
-        /* Link stili - Tasarımdaki mavi rengi kullanıyoruz */
         .section-content a {
             color: var(--primary-color);
             text-decoration: none;
@@ -126,29 +113,26 @@
             text-decoration: underline;
         }
 
-        /* İletişim bölümündeki tire */
         .contact-signature {
             margin-top: 2rem;
             margin-bottom: 1.5rem;
             font-weight: 500;
         }
         
-        /* Buton grubu */
         .button-group {
             display: flex;
-            flex-wrap: wrap; /* Butonların alt satıra geçmesini sağlar */
+            flex-wrap: wrap;
             gap: 0.75rem;
             justify-content: center;
             width: 100%;
             margin-top: 0.5rem;
         }
 
-        /* Buton stili */
         .action-button {
             border: 1px solid var(--text-color);
             color: var(--text-color);
             padding: 0.5rem 1.25rem;
-            border-radius: 9999px; /* Full rounded */
+            border-radius: 9999px;
             font-size: 0.875rem;
             font-weight: 500;
             display: flex;
@@ -163,22 +147,20 @@
             color: white;
         }
 
-        /* Footer stili */
         .footer {
             margin-top: 5rem;
-            font-size: 0.75rem; /* text-xs */
+            font-size: 0.75rem;
             color: var(--secondary-text-color);
             text-align: center;
             padding: 1rem 0;
             border-top: 1px solid #e0e0e0;
             width: 100%;
-            max-width: 1000px; /* FOOTER GENİŞLİĞİ 1000px olarak güncellendi */
+            max-width: 650px;
         }
 
-        /* Mobil uyumluluk */
         @media (max-width: 600px) {
             .content-wrapper {
-                grid-template-columns: 1fr; /* Tek sütuna düşür */
+                grid-template-columns: 1fr;
                 gap: 0;
             }
 
@@ -193,14 +175,14 @@
             }
 
             .button-group {
-                flex-direction: row; /* Butonlar satırda kalır ama flex-wrap sayesinde alt satıra geçer */
+                flex-direction: row;
                 align-items: center;
             }
 
             .action-button {
                 justify-content: center;
-                flex-grow: 1; /* Mobil görünümde eşit büyüme sağlar */
-                min-width: 45%; /* Yan yana iki buton sığdırmak için */
+                flex-grow: 1;
+                min-width: 45%;
             }
         }
     </style>
@@ -208,9 +190,7 @@
 <body>
 
     <div class="container">
-        <!-- Profil Başlık Alanı -->
         <div class="profile-header">
-            <!-- Avatar - GÜNCELLENMİŞ URL -->
             <div class="avatar-container">
                 <img src="https://pbs.twimg.com/profile_images/1978073305539055616/Wl3vo4p4_400x400.jpg" 
                      alt="Profile Avatar" 
@@ -219,20 +199,16 @@
             </div>
 
             <h1 class="name">Arda Çetin</h1>
-            <!-- GÜNCELLENMİŞ UNVAN -->
             <p class="title">Solopreneur<br>I make stuff on the internet.</p>
         </div>
 
-        <!-- İçerik Alanı -->
         <div class="content-wrapper">
             
-            <!-- ABOUT Section -->
             <span class="section-label">/about</span>
             <div class="section-content">
                 <p>I am a digital entrepreneur who crafts innovative projects, blending design, development, and strategy to deliver transformation-focused solutions. I prioritize human-centered technology, building simple yet powerful systems that create meaningful social impact.</p>
             </div>
 
-            <!-- CONTACT Section -->
             <span class="section-label">/contact</span>
             <div class="section-content">
                 <p>For inquiries or collaboration, feel free to reach out. I’m always open to exploring new ideas and meaningful partnerships.</p>
@@ -242,8 +218,6 @@
             
         </div>
 
-        <!-- Aksiyon Butonları -->
-        <!-- GÜNCELLENMİŞ BAĞLANTILAR -->
         <div class="button-group">
             <a href="mailto:arda@letsdigital.co" class="action-button">Email</a>
             <a href="https://www.instagram.com/ardacetin___/" class="action-button" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -252,7 +226,6 @@
             <a href="https://github.com/ardacetin" class="action-button" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
         
-        <!-- Footer -->
         <div class="footer">
             &#127278; 1985
         </div>
